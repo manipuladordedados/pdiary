@@ -39,7 +39,7 @@ If your terminal supports mouse interaction you also can control the widgets wit
 
 ## Known Issues
 
-- In some old terminals without support to new technologies, it can be possible to happen some errors like the non exhibition of some icons and some characters, it can also have some trouble with colors.
+- In some old terminals without support to new technologies some errors may occur, like the non exhibition of some icons and some characters, it can also have some trouble with colors.
 - Pdiary is responsive, positioning is done according to terminal sizes, but sometimes it might break. If so, try in a terminal with a different size.
 
 
