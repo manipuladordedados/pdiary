@@ -90,8 +90,6 @@ class MainMenuForm(npyscreen.FormBaseNew):
         # max_y, max_x = self.curses_pad.getmaxyx() also work
         menu_itens = ["📜Add entry",
                       "📚View previous entries",
-                      # TODO: "Search entries" to be implemeted
-                      # TODO: "Settings" to be implemeted
                       "❎Exit"]
         self.display()
         self.add(npyscreen.MultiLineEdit, editable=False,
@@ -133,9 +131,6 @@ class ViewEntriesForm(npyscreen.FormBaseNewWithMenus, npyscreen.SplitForm):
         self.text = self.add(npyscreen.Pager, autowrap=False, scroll_exit=True,
                              rely=7, editable=True)
         self.menu = self.new_menu(name="", shortcut="m")
-        # TODO: self.menu.addItem("Export to PDF")
-        # TODO: self.menu.addItem("Export to Markdown")
-        # TODO: self.menu.addItem("Export as HTML")
         self.menu.addItem("⬅ Back", self.on_ok)
         self.menu.addItem("↗ Export as Plain Text", self.to_plain_text)
         self.menu.addItem("📝Edit", self.edit_form)
