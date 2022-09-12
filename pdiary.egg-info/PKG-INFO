@@ -1,3 +1,17 @@
+Metadata-Version: 2.1
+Name: pdiary
+Version: 1.65
+Summary: A simple terminal diary journal application written in Python with encryption support
+Home-page: https://github.com/manipuladordedados/pdiary
+Author: Valter Nazianzeno
+Author-email: manipuladordedados@gmail.com
+License: GNU GPLv3
+Keywords: diary pdiary journal terminal python
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3 :: Only
+License-File: LICENSE
+License-File: AUTHORS
+
 <h1 align="center">pdiary</h1>
 <p align="center">
 <img src="./assets/logo.png">

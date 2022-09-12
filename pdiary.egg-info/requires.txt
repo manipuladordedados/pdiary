@@ -1,0 +1,3 @@
+peewee>=2.8.3
+sqlcipher3-binary>=0.4.0
+npyscreen@ https://github.com/jwoglom/npyscreen/archive/master.tar.gz

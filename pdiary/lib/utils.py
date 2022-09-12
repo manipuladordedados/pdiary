@@ -16,24 +16,18 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import os
-import sys
-from fcntl import lockf, LOCK_EX, LOCK_NB
-from pdiary.forms import App
+import datetime
+import configparser
 
-# This prevent several instances of pdiary running at the same time
-class SingleInstance(object):
-    def __init__(self):
-        fd = os.open("/tmp/pdiary.lock", os.O_WRONLY | os.O_CREAT | os.O_TRUNC)
-        try:
-           lockf(fd, LOCK_EX | LOCK_NB)
-        except IOError:
-          print("An Instance of pdiary is already running.")
-          sys.exit(1)
+USER_HOME = os.path.expanduser("~")
+CONFIG_DIR_PATH = os.path.expanduser("~")+"/.config/pdiary/"
 
-def main():
-  try:
-    MyApp = App()
-    SingleInstance()
-    MyApp.run()
-  except (KeyboardInterrupt):
-    exit()
+config = configparser.ConfigParser()
+config.optionxform = str
+
+class WriteFile(object):
+    def toText(self, title, date, content):
+        config.read(CONFIG_DIR_PATH+"pdiary.conf")
+        with open(config.get("DEFAULT", "Export_Folder")+"/"+str(date)+"-"+title.replace(" ", "-").lower()+".txt", "w") as file:
+            file.write(str(title)+"\n\n"+content+"\n\n"+datetime.datetime.strptime(str(date), '%Y-%m-%d').strftime("%B %d, %Y"))
+            file.close()
