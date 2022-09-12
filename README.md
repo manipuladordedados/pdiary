@@ -21,7 +21,7 @@
 
 To install, simply use `pip`:
 
-    pip install pdiary
+    pip install https://github.com/manipuladordedados/pdiary/releases/download/1.65/pdiary-1.65-py3-none-any.whl
 
 ## Usage
 It is recommended to run pdiary in a terminal that's support 256 colors, resize and UTF-8.
